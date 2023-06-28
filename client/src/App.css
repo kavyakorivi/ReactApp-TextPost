@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+}
+
+h2{
+  color: rgb(89, 175, 181);
+  background-color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: inherit;
+  font-weight: 300px;
+}
+h3{
+  font-size: 40px;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: oblique;
+  font-weight: 100px;
+  background-color:powderblue ;
+
+}
+
+body{
+  text-align: center;
+  padding: 25px;
+  display: block;
+  margin: auto;
+  border-radius: auto;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  color: rgb(21, 20, 17);
+}
+
+input{
+	font-size:22px;
+	text-align:center;
+	padding:2px;
+	border-radius:14px;	
+}
+
+div{
+  font-size:18px;
+  font-style: inherit;
+  color: rgb(16, 16, 94);
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+
+form{
+    align-items: center;
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    width: 320px;
+    display: inline-block;
+
+}
+label{
+  color:bisque;
+}

@@ -13,10 +13,11 @@ const Post = mongoose.model("Post", postSchema);
 
 
 //CREATE a post
-async function createPost( userid, postcontent) {
+async function create( userid, postcontent) {
 
     const newPost = await Post.create({
         userid: userid,
+        postid: userid,
         postcontent: postcontent
   });
 
@@ -24,8 +25,8 @@ async function createPost( userid, postcontent) {
 }
 
 // READ a post
-async function readPost(id) {
-  const post = await Post.find({"_id": id});
+async function read(userid) {
+  const post = await Post.find({"userid": userid});
   if(!post) throw Error('post not found');
   
   return post;
@@ -50,5 +51,5 @@ async function getPost(post) {
 
 // 5. export all functions we want to access in route files
 module.exports = { 
-  createPost, readPost, updatePost, deletePost, getPost
+  create, read, updatePost, deletePost, getPost
 };

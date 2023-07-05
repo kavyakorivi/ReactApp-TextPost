@@ -3,17 +3,17 @@ const Post = require('../models/post');
 const router = express.Router();
 
 router
- .post('/createpost', async (req,res) => {
+ .post('/create', async (req,res) => {
     try{
-     const post = await Post.createPost(req.body.userid,req.body.postcontent);  
+     const post = await Post.create(req.body.userid,req.body.postcontent);  
      res.send({post});
     } catch(error){
       res.status(401).send({message: error.message});
     }
  })
- .post('/readpost', async (req,res) => {
+ .post('/view', async (req,res) => {
     try{
-     const posts = await Post.readPost(req.body.id,req.body.postcontent);  
+     const posts = await Post.read(req.body.userid);  
      res.send({posts});
     } catch(error){
       res.status(401).send({message: error.message});

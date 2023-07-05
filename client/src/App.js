@@ -1,11 +1,12 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Posts from "./components/Posts.js";
-import About from "./components/About.js";
-import Navbar from './components/Navbar.js';
-import Register from './components/Register.js';
-import Profile from './components/Profile.js';
-import Login from './components/Login.js';
+import Posts from "./components/pages/Posts.js";
+import About from "./components/pages/About.js";
+import Navbar from './components/pages/Navbar.js';
+import Register from './components/pages/Register.js';
+import Profile from './components/pages/Profile.js';
+import Login from './components/pages/Login.js';
+import { UserProvider } from './context/userContext';
 
 const posts= [
   {
@@ -25,10 +26,10 @@ const posts= [
 function App() {
   return (
     <div className="App">
+      <UserProvider>
         <BrowserRouter>
           <Routes>
-
-            <Route element={<Navbar />}>
+            <Route path="/" element={<Navbar />}>
               <Route index element={<About />}/>
               <Route path="posts" element={<Posts posts={posts}/>}/>
               <Route path="register" element={<Register />}/>
@@ -37,6 +38,7 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
+        </UserProvider>
 
     </div>
   );

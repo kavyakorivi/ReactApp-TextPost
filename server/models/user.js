@@ -25,7 +25,8 @@ async function register(username, useremail, password) {
   const newUser = await User.create({
     username: username,
     useremail: useremail,
-    password: hashed
+    password: hashed,
+    userid: username
   });
 
   return newUser._doc;

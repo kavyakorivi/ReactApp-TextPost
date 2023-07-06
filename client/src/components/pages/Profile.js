@@ -19,11 +19,9 @@ const Profile = () => {
     const onSubmit = (e) => {
       e.preventDefault();
       console.log('submitted');
-      
       fetchData("/post/create",
           {
             postcontent,
-            
           },
           "POST")
           .then((data) => {
@@ -40,7 +38,7 @@ const Profile = () => {
                       .then((res) => {
                           console.log(res);
                           if (!res.message) {
-                              navigate("/profile", { state: {  data: res } });
+                              navigate("/profile", { name:postcontent, state: { data: res } });
                           }
                       })
                       .catch((error) => {
@@ -53,11 +51,10 @@ const Profile = () => {
           })
 
   }
-
   
+  return (
 
-         
-    return(
+
     <div className ="container">
     <div className="row justify-content-center">
         <div className="card mb-3 col-md-8 col-xl-6 mt-5">
@@ -70,10 +67,10 @@ const Profile = () => {
           </form>
         </div>
     </div>
+
     <Posts />
-  </div>
+    </div>
   
   );
-    }
-
+  }
   export default Profile;

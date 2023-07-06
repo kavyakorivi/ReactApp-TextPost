@@ -58,6 +58,7 @@ const Profile = () => {
     <div className ="container">
     <div className="row justify-content-center">
         <div className="card mb-3 col-md-8 col-xl-6 mt-5">
+        <Posts />
           <form onSubmit={onSubmit}>
             <div className ="form-group mb-3">
               <label htmlFor="exampleInputPassword1">Post Contents</label>
@@ -68,7 +69,7 @@ const Profile = () => {
         </div>
     </div>
 
-    <Posts />
+    
     </div>
   
   );
